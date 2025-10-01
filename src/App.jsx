@@ -1,39 +1,25 @@
-import { useState } from "react";
-
-function App() {
-  const [name, setName] = useState("");
-  const [submittedName, setSubmittedName] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmittedName(name);
-  };
-
+export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4">React useState 練習</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <div className="text-center px-6">
+        {/* Hero Title */}
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Welcome to My Portfolio 🚀
+        </h1>
 
-      <form onSubmit={handleSubmit} className="flex gap-2">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="請輸入名字"
-          className="border rounded px-2 py-1"
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-3 py-1 rounded"
+        {/* Subtitle */}
+        <p className="text-lg md:text-2xl text-gray-300 mb-6">
+          學習 React 的第一個 Demo – Hero 區塊
+        </p>
+
+        {/* Button */}
+        <a
+          href="#faq"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition"
         >
-          Submit
-        </button>
-      </form>
-
-      {submittedName && (
-        <p className="mt-4 text-lg">Hello, {submittedName} 👋</p>
-      )}
+          開始探索
+        </a>
+      </div>
     </div>
   );
 }
-
-export default App;
